@@ -18,6 +18,7 @@ class Controller(rpc: NodeRPCConnection) {
 
     private val proxy = rpc.proxy
 
+    // TODO create the endpoints for DAB
     @GetMapping(value = "/templateendpoint", produces = arrayOf("text/plain"))
     private fun templateendpoint(): String {
         return "Define an endpoint here."
