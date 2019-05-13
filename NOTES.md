@@ -24,5 +24,13 @@ There is also a client commandline example that can be run as follows:
 $ ./gradlew runTemplateClient
 ```
 
+## Add the Token SDK dependencies
+See [github reference](https://github.com/corda/cordapp-template-kotlin/blob/token-template/build.gradle)
+and [token sdk](https://github.com/corda/token-sdk)
+
+These token libraries allow you to make use of the token support. 
+
+
 ## Next steps
 Now I need to embelish the REST API and look at adding a React frontend.
+
