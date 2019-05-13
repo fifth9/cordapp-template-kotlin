@@ -31,7 +31,7 @@ class ExampleFlowWithEvolvableToken(
         val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = listOf(uuid))
         val tokenStateAndRef = serviceHub.vaultService.queryBy<EvolvableTokenType>(queryCriteria).states.single()
         val token = tokenStateAndRef.state.data.toPointer<EvolvableTokenType>()
-        return subFlow(IssueToken.Initiator(token, recipient, notary, amount of token, anonymous = false))
+        return subFlow(IssueToken.Initiator(token, recipient, notary, amount of token, session = null))
     }
 }
 
@@ -44,6 +44,6 @@ class CreateExampleEvolvableToken(val data: String) : FlowLogic<SignedTransactio
         val notary = serviceHub.networkMapCache.notaryIdentities.first()
         val evolvableTokenType = ExampleEvolvableTokenType(data, ourIdentity)
         val transactionState = TransactionState(evolvableTokenType, notary = notary)
-        return subFlow(CreateEvolvableToken.Initiator(transactionState))
+        return subFlow(CreateEvolvableToken(transactionState))
     }
 }

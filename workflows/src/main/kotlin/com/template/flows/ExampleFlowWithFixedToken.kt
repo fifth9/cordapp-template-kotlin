@@ -18,6 +18,6 @@ class ExampleFlowWithFixedToken(val currency: String, val amount: Long, val reci
     override fun call(): SignedTransaction {
         val notary = serviceHub.networkMapCache.notaryIdentities.first()
         val token = FiatCurrency.getInstance(currency)
-        return subFlow(IssueToken.Initiator(token, recipient, notary, amount of token, anonymous = false))
+        return subFlow(IssueToken.Initiator(token, recipient, notary, amount of token, session = null))
     }
 }
