@@ -6,7 +6,9 @@ import net.corda.testing.node.MockNetworkParameters
 import net.corda.testing.node.TestCordapp
 import org.junit.After
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class FlowTests {
     private val network = MockNetwork(MockNetworkParameters(cordappsForAllNodes = listOf(
@@ -29,7 +31,10 @@ class FlowTests {
     fun tearDown() = network.stopNodes()
 
     @Test
+    //@Ignore
     fun `dummy test`() {
-
+        val one = 1
+        val two = 1
+        assertEquals(one, two)
     }
 }
