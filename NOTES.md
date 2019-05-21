@@ -30,6 +30,19 @@ and [token sdk](https://github.com/corda/token-sdk)
 
 These token libraries allow you to make use of the token support. 
 
+## Testing
+For testing and running individual tests you will need to install Quasar
+
+```text
+$ ./gradlew installQuasar
+```
+
+
+Before creating the IntelliJ run configurations for these unit tests go 
+to Run -> Edit Configurations -> Defaults -> JUnit, add `-javaagent:lib/quasar.jar` to 
+the VM options, and set Working directory to `$PROJECT_DIR$` so that the Quasar 
+instrumentation is correctly configured.
+
 
 ## Next steps
 Now I need to embelish the REST API and look at adding a React frontend.
